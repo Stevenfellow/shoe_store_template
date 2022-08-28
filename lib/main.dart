@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'BottomNavigation.dart';
 import 'ItemsList.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
@@ -16,7 +19,6 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
   }
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
@@ -101,6 +103,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
+            // ignore: sized_box_for_whitespace
             Container(
               width: double.infinity,
               height: 290,
@@ -118,14 +121,17 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           child: const Icon(Icons.add_shopping_cart),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: CookingNavigator(),
+        bottomNavigationBar: const CookingNavigator(),
       ),
     );
   }
 }
 
 class CookiesMasters extends StatefulWidget {
+  const CookiesMasters({Key? key}) : super(key: key);
+
   @override
+  // ignore: library_private_types_in_public_api
   _CookiesMastersState createState() => _CookiesMastersState();
 }
 
