@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:shoe_store/Account_details.dart';
 
 class CookingNavigator extends StatelessWidget {
   const CookingNavigator({Key? key}) : super(key: key);
@@ -29,9 +30,19 @@ class CookingNavigator extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Icon(Icons.alarm, color: Colors.red[700]),
-                          const Icon(Icons.person_outline,
-                              color: Color(0xFF676E79)),
+                          IconButton(
+                              onPressed: (() {}),
+                              icon: const Icon(Icons.alarm, color: Colors.red)),
+                          IconButton(
+                              onPressed: (() {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: ((context) =>
+                                            const UseDetails())));
+                              }),
+                              icon: const Icon(Icons.person_outline,
+                                  color: Colors.red))
                         ],
                       )),
 
@@ -42,8 +53,8 @@ class CookingNavigator extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: const <Widget>[
-                          Icon(Icons.search, color: Color(0xFF676E79)),
-                          Icon(Icons.shopping_basket, color: Color(0xFF676E79))
+                          Icon(Icons.search, color: Colors.red),
+                          Icon(Icons.shopping_basket, color: Colors.red)
                         ],
                       )),
                 ])));

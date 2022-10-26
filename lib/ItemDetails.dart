@@ -1,10 +1,13 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'BottomNavigation.dart';
 
 class ItemDetail extends StatelessWidget {
   final assetPath, cookieprice, cookiename;
 
-  ItemDetail({this.assetPath, this.cookieprice, this.cookiename});
+  const ItemDetail(
+      {super.key, this.assetPath, this.cookieprice, this.cookiename});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
